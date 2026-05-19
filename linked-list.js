@@ -1,6 +1,13 @@
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.nextNode = null;
+    }
+}
+
 export class LinkedList {
-    constructor() {
-        this.head = null;
+    constructor(head = null) {
+        this.head = head;
     }
 
     append(value) {
@@ -16,19 +23,47 @@ export class LinkedList {
         while(current.nextNode) {
             current = current.nextNode;
         }
+
         current.nextNode = newNode;
     }
 
     prepend(value) {
+        const newNode = new Node(value);
 
+        if(!this.head) {
+            this.head = newNode();
+            return
+        }
+
+        // put the whole linked list inside the nextNode of the newNode
+        // and make the newNode the head
+        const linkedList = this.head;
+        newNode.nextNode = linkedList;
+        this.head = newNode;
     }
 
     size() {
+        if(!this.head) {
+            console.log('The list is empty.');
+            return;
+        }
 
+        let current = this.head;
+        let count = 0;
+        while(current) {
+            current = current.nextNode;
+            count++;
+        }
+
+        console.log(count);
     }
 
-    head() {
+    listHead() {
+        if(!this.head) {
+            return;
+        }
 
+        return console.log('Head: ' + this.head.value);
     }
 
     tail() {
@@ -56,17 +91,10 @@ export class LinkedList {
         let result = '';
 
         while(current) {
-            result += current.value + ' -> ';
+            result += `( ${current.value} )->`;
             current = current.nextNode;
         }
 
         console.log(result + 'null');
-    }
-}
-
-class Node {
-    constructor(value) {
-        this.value = value;
-        this.nextNode = null;
     }
 }
