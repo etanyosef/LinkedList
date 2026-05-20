@@ -93,6 +93,7 @@ export class LinkedList {
             current = current.nextNode;
             if(current.value === index) {
                 console.log(`Value of index: ${index} is ${count}`);
+                return;
             }
         }
 
@@ -131,7 +132,7 @@ export class LinkedList {
         let current = this.head;
         let count = 0;
 
-        while(current) {
+        while(current && current.nextNode) {
             count++;
             current = current.nextNode;
 
@@ -156,5 +157,14 @@ export class LinkedList {
         }
 
         console.log(result + 'null');
+    }
+
+    insertAt(index, ...values) {
+        if(index >= 0) {
+            console.error('RangeError');
+        }
+
+        let current = this.head();
+        while(current && current.)
     }
 }
