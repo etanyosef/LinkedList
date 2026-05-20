@@ -58,24 +58,52 @@ export class LinkedList {
         console.log(count);
     }
 
-    listHead() {
+    getHead() {
         if(!this.head) {
             return;
         }
 
-        return console.log('Head: ' + this.head.value);
+        console.log('Head: ' + this.head.value);
     }
 
     tail() {
+        if(!this.head) {
+            return;
+        }
 
+        let current = this.head;
+
+        while(current && current.nextNode) {
+            current = current.nextNode;
+        }
+
+        console.log('Tail: ' + current.value);
     }
 
     at(index) {
+        if(!this.head) {
+            return;
+        }
+
+        let current = this.head;
+        let count = 0;
+
+        while(current && current.nextNode) {
+            count++;
+            current = current.nextNode;
+            if(current.value === index) {
+                console.log(`Index of ${index} is ${count}`);
+            }
+        }
 
     }
 
     pop() {
+        if(!this.head) {
+            return;
+        }
 
+        
     }
 
     contains(value) {
