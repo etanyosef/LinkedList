@@ -92,7 +92,7 @@ export class LinkedList {
             count++;
             current = current.nextNode;
             if(current.value === index) {
-                console.log(`Index of ${index} is ${count}`);
+                console.log(`Value of index: ${index} is ${count}`);
             }
         }
 
@@ -124,6 +124,25 @@ export class LinkedList {
     }
 
     findIndex(value) {
+        if(!this.head) {
+            return;
+        }
+
+        let current = this.head;
+        let count = 0;
+
+        while(current) {
+            count++;
+            current = current.nextNode;
+
+            if(current.value === value) {
+                console.log(`Index of ${value} is ${count}`);
+                return;
+            }
+        }
+
+        count = -1;
+        console.log('Index: ' + count);
 
     }
 
