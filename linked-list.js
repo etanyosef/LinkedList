@@ -104,12 +104,23 @@ export class LinkedList {
         }
 
         let current = this.head;
-
+        console.log(`Removed the head with value: ${current.value}`)
         this.head = current.nextNode;
     }
 
     contains(value) {
+        if(!this.head) {
+            return;
+        }
 
+        let current = this.head;
+        while(current) {
+            if(current.value == value) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
     findIndex(value) {
