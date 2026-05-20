@@ -103,7 +103,9 @@ export class LinkedList {
             return;
         }
 
-        
+        let current = this.head;
+
+        this.head = current.nextNode;
     }
 
     contains(value) {
