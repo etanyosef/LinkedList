@@ -161,7 +161,7 @@ export class LinkedList {
 
     insertAt(index, ...values) {
         if (index > 0) {
-            console.error('RangeError');
+            // console.error('RangeError');
         }
 
         let current = this.head;
@@ -177,8 +177,16 @@ export class LinkedList {
         }
         
         // TODO: insert values in each node
-        const newNode = new Node(values);
-        prev.nextNode = newNode;
-        newNode.nextNode = current;
+        // const newNode = new Node(values);
+
+        values.forEach(val => {
+            const newNode = new Node(val);
+            prev.nextNode = newNode;
+            prev = newNode;
+            newNode.nextNode = current;
+        });
+
+        // prev.nextNode = newNode;
+        // newNode.nextNode = current;
     }
 }
