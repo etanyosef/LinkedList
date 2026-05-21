@@ -175,9 +175,6 @@ export class LinkedList {
                 return null;
             }
         }
-        
-        // TODO: insert values in each node
-        // const newNode = new Node(values);
 
         values.forEach(val => {
             const newNode = new Node(val);
@@ -185,8 +182,5 @@ export class LinkedList {
             prev = newNode;
             newNode.nextNode = current;
         });
-
-        // prev.nextNode = newNode;
-        // newNode.nextNode = current;
     }
 }

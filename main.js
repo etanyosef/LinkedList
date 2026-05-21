@@ -36,6 +36,6 @@ list.toString();
 // list.toString();
 
 // list.findIndex(8);
-
-list.insertAt(3, 6, 7);
+list.toString();
+list.insertAt(3, 6, 7, 8, 9, 'sagit');
 list.toString();
