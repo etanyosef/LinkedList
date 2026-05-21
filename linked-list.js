@@ -160,8 +160,9 @@ export class LinkedList {
     }
 
     insertAt(index, ...values) {
-        if (index > 0) {
-            // console.error('RangeError');
+        if (index < 0) {
+            console.error('RangeError');
+            return;
         }
 
         let current = this.head;
