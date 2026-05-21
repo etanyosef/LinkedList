@@ -39,3 +39,6 @@ list.toString();
 list.toString();
 list.insertAt(3, 6, 7, 8, 9, 'sagit');
 list.toString();
+
+list.removeAt(3)
+list.toString()

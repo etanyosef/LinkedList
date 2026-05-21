@@ -184,4 +184,20 @@ export class LinkedList {
             newNode.nextNode = current;
         });
     }
+
+    removeAt(index) {
+        if (index < 0) return console.error("Range Error");
+
+        let current = this.head;
+        let prev = null;
+
+        for (let i = 0; i < index; i++) {
+            prev = current;
+            current = current.nextNode;
+
+            if (!current) return null;
+        }
+
+        prev.nextNode = current.nextNode;
+    }
 }
